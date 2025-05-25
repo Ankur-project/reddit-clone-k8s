@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reddit-clone-deployment
-  labels:
-    app: reddit-clone
+  name: reddit
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: reddit-clone
+      app: reddit
   template:
     metadata:
       labels:
-        app: reddit-clone
+        app: reddit
     spec:
       containers:
-      - name: reddit-clone
-        image: sevenajay/reddit:latest
+      - name: reddit
+        image: newindia90/reddit:latest
         ports:
         - containerPort: 3000
